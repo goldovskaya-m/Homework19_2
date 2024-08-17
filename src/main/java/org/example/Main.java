@@ -11,10 +11,13 @@ public class Main {
 
     private static final List<Integer> nums =
             new ArrayList<>(List.of(1, 1, 2, 3, 4, 4, 5, 5, 5, 7));
-    private static final List<String> words = new ArrayList<>(List.of("один", "два", "два", "три", "три", "три"));
+    private static final List<String> words = new ArrayList<>
+            (List.of("один", "два", "два", "три", "три", "три"));
+
+
 
     public static void main(String[] args) {
-        task3();
+        task4();
         System.out.println("Homework19_2");
     }
 
@@ -42,12 +45,26 @@ public class Main {
         System.out.println("все уникальные слова из списка слов " + uniqueWords);
     }
 
-    public static void task4() {
-        Set<String> uniqueWords = new HashSet<>(words);
-        System.out.println(" Количество повторов " + (words.size() - uniqueWords.size()));
 
+    public static void task4() {
+
+        Map<String, Integer> words1 = new HashMap<>();
+        for (String words : words) {
+            if (!words1.containsKey(words)) {
+                words1.put(words, 1);
+            } else {
+                words1.put(words, words1.get(words) + 1);
+                System.out.println(words1.values());
+            }
+        }
     }
 }
+
+
+
+
+
+
 
 
 
