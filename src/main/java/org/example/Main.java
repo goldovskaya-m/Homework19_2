@@ -47,18 +47,19 @@ public class Main {
 
     public static void task4() {
 
-        Map<String, Integer> words1;
-        words1 = new HashMap<>();
+        Map<String, Integer> words1 = new HashMap<>();
         for (String words : words) {
             if (!words1.containsKey(words)) {
-                  words1.put(words, 1);
-                } else {
+                words1.put(words, 1);
+            } else {
                 words1.put(words, words1.get(words) + 1);
+            }
+        }
                 System.out.println(" количество дублей для каждого уникального слова " + words1);
             }
         }
-    }
-}
+
+
 
 
 
